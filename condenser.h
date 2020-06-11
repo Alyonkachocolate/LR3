@@ -5,14 +5,14 @@
 class condenser : public abstract {
 private:
   double C = 0;
-  size_t U = 0;
+  double U = 0;
 
 public:
-  condenser(double, size_t);
+  condenser(const double &c, const double &u);
   double W() override;
   void print() override;
 };
-condenser::condenser(double C, size_t U) : C(C), U(U) {}
+condenser::condenser(const double &c, const double &u) : C(c), U(u) {}
 double condenser::W() { return C * U * U / 2.; }
 void condenser::print() {
   std::cout << "It's a condenser. C = " << C << ", U = " << U
